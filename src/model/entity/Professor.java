@@ -14,7 +14,6 @@ public class Professor extends Pessoa {
         this.turno = turno;
     }
 
-    @Override
     public void exibirDados() {
         System.out.println("Professor:");
         System.out.println("Nome: " + getNome());
@@ -25,7 +24,6 @@ public class Professor extends Pessoa {
         mostrarTurno();
     }
 
-    @Override
     public void mostrarTurno() {
         System.out.println("Turno: " + turno);
     }

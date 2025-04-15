@@ -1,73 +1,59 @@
- README - Sistema de Cadastro de Membros da Comunidade Escolar
+## README - Sistema de Cadastro de Membros da Comunidade Escolar
 
+### ✨ Descrição
 
+Este é um sistema simples em Java que permite o cadastro de diferentes tipos de membros da comunidade escolar: **Aluno**, **Professor** e **Técnico-Administrativo**.
 
- Descrição
-
-
-Este é um sistema simples em Java que permite o cadastro de diferentes tipos de membros da comunidade escolar: Aluno, Professor e Técnico-Administrativo.
 Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
-Encapsulamento: todos os atributos são privados e acessados via getters/setters.
+- **Encapsulamento:** todos os atributos são privados e acessados via getters/setters.
+- **Herança:** as classes `Aluno`, `Professor` e `TecnicoAdministrativo` estendem a classe abstrata `Pessoa`.
+- **Abstração:** a classe `Pessoa` define a estrutura genérica de um membro escolar.
+- **Polimorfismo:** o método `exibirDados()` é sobrescrito por cada classe derivada.
 
-Herança: as classes Aluno, Professor e TecnicoAdministrativo estendem a classe abstrata Pessoa.
+---
 
-Abstração: a classe Pessoa define a estrutura genérica de um membro escolar.
+### 🔹 Conceitos de POO aplicados
 
-Polimorfismo: o método exibirDados() é sobrescrito por cada classe derivada.
+| Conceito         | Como foi usado                                                                 |
+|------------------|---------------------------------------------------------------------------------|
+| **Abstração**       | A classe abstrata `Pessoa` define os atributos comuns e obriga `exibirDados()` |
+| **Encapsulamento**| Todos os atributos são `private`, acessados por meio de getters e setters        |
+| **Herança**         | `Aluno`, `Professor` e `TecnicoAdministrativo` estendem a classe `Pessoa`     |
+| **Polimorfismo**   | Métodos `exibirDados()` e `mostrarTurno()` são sobrescritos e chamados polimorficamente |
 
+---
 
+### 📃 Tipos de Membros Cadastrados
 
-Conceitos de POO aplicados
+- **Aluno:** matrícula, curso, turno
+- **Professor:** SIAPE, disciplina, turno
+- **Técnico-Administrativo:** setor, cargo, turno
 
-Conceito	Como foi usado
-Abstração	A classe abstrata Pessoa define os atributos comuns e obriga exibirDados()
-Encapsulamento	Todos os atributos são private, acessados por meio de getters e setters
-Herança	Aluno, Professor e TecnicoAdministrativo estendem a classe Pessoa
-Polimorfismo	Métodos exibirDados() e mostrarTurno() são sobrescritos e chamados polimorficamente
+---
 
+### 🚀 Funcionalidades
 
+- Cadastro de qualquer número de membros
+- Entrada de dados via console
+- Impressão de relatório individual para cada membro
+- Inclusão do atributo `Turno` para todos os tipos
+- O programa reinicia automaticamente após o relatório
+- Tratamento de exceções com `try/catch` para evitar erros de entrada
+- Utilização de `ArrayList` para armazenar os cadastros dinamicamente
 
-Tipos de Membros Cadastrados
-Aluno: matrícula, curso, turno
+---
 
-Professor: SIAPE, disciplina, turno
+### 📅 Requisitos
 
-Técnico-Administrativo: setor, cargo, turno
+- Java 8 ou superior
+- Terminal ou IDE como VS Code, Eclipse ou IntelliJ
 
+---
 
+### 📈 Exemplo de Saída
 
- Funcionalidades
-
-
-Cadastro de qualquer número de membros.
-
-Entrada de dados via console.
-
-Impressão de relatório individual para cada membro.
-
-Inclusão do atributo Turno para todos os tipos.
-
-O programa reinicia automaticamente após o relatório, permitindo cadastrar novamente.
-
-Tratamento de exceções com try/catch para evitar erros de entrada.
-
-Utilização de ArrayList para armazenar os cadastros dinamicamente.
-
-
-
- Requisitos
-
-
-Java 8 ou superior
-
-Terminal ou IDE como VS Code, Eclipse, IntelliJ
-
-
-
-Exemplo de Saída
-
-
+```
 Quantos membros deseja cadastrar? 2
 Selecione o tipo (1 - Aluno, 2 - Professor, 3 - Técnico-Administrativo): 1
 Nome: João
@@ -104,12 +90,14 @@ Disciplina: Análise e desevolvimento de software
 Turno: Noite
 Deseja realizar outro cadastro? (s/n): n
 Encerrando o programa. Até mais!
+```
 
+---
 
+### 🚧 Como executar
 
-Como executar
+1. Clone o repositório:
+   [https://github.com/joaoirineu33/sistema-de-cadastro-de-membros-escolar.git](https://github.com/joaoirineu33/sistema-de-cadastro-de-membros-escolar.git)
 
-Clone o repositório:
-[text](https://github.com/joaoirineu33/sistema-de-cadastro-de-membros-escolar.git)
- Abra em uma IDE (como VS Code, IntelliJ ou Eclipse).
- Compile e execute o arquivo Main.java
+2. Abra em uma IDE (como VS Code, IntelliJ ou Eclipse).
+3. Compile e execute o arquivo `Main.java`.

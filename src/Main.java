@@ -10,7 +10,7 @@ import model.entity.TecnicoAdministrativo;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); // Inicializa o Scanner
+        Scanner sc = new Scanner(System.in);
 
         boolean continuar = true;
 
@@ -21,10 +21,10 @@ public class Main {
             int total = 0;
             try {
                 total = sc.nextInt();
-                sc.nextLine(); // Limpa o buffer
+                sc.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Reiniciando...");
-                sc.nextLine(); // Limpa o buffer
+                sc.nextLine();
                 continue;
             }
 
@@ -90,6 +90,6 @@ public class Main {
             }
         }
 
-        sc.close(); // Fecha o Scanner após o término do programa
+        sc.close(); 
     }
 }
