@@ -1,6 +1,6 @@
 ## README - Sistema de Cadastro de Membros da Comunidade Escolar
 
-### ✨ Descrição
+###  Descrição
 
 Este é um sistema simples em Java que permite o cadastro de diferentes tipos de membros da comunidade escolar: **Aluno**, **Professor** e **Técnico-Administrativo**.
 
@@ -24,7 +24,7 @@ Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
 ---
 
-### 📃 Tipos de Membros Cadastrados
+###  Tipos de Membros Cadastrados
 
 - **Aluno:** matrícula, curso, turno
 - **Professor:** SIAPE, disciplina, turno
@@ -32,7 +32,7 @@ Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
 ---
 
-### 🚀 Funcionalidades
+###  Funcionalidades
 
 - Cadastro de qualquer número de membros
 - Entrada de dados via console
@@ -44,14 +44,7 @@ Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
 ---
 
-### 📅 Requisitos
-
-- Java 8 ou superior
-- Terminal ou IDE como VS Code, Eclipse ou IntelliJ
-
----
-
-### 📈 Exemplo de Saída
+###  Exemplo de Saída
 
 ```
 Quantos membros deseja cadastrar? 2
@@ -94,7 +87,7 @@ Encerrando o programa. Até mais!
 
 ---
 
-### 🚧 Como executar
+###  Como executar
 
 1. Clone o repositório:
    [https://github.com/joaoirineu33/sistema-de-cadastro-de-membros-escolar.git](https://github.com/joaoirineu33/sistema-de-cadastro-de-membros-escolar.git)

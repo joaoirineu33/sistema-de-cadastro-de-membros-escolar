@@ -1,6 +1,7 @@
 package model.entity;
 
 import model.Pessoa;
+import java.util.Objects;
 
 public class Aluno extends Pessoa {
     private String matricula;
@@ -14,17 +15,45 @@ public class Aluno extends Pessoa {
         this.turno = turno;
     }
 
+    public String getMatricula() { return matricula; }
+    public void setMatricula(String matricula) { this.matricula = matricula; }
+
+    public String getCurso() { return curso; }
+    public void setCurso(String curso) { this.curso = curso; }
+
+    public String getTurno() { return turno; }
+    public void setTurno(String turno) { this.turno = turno; }
+
     public void exibirDados() {
-        System.out.println("Aluno:");
-        System.out.println("Nome: " + getNome());
-        System.out.println("Idade: " + getIdade());
-        System.out.println("CPF: " + getCpf());
-        System.out.println("Matrícula: " + matricula);
-        System.out.println("Curso: " + curso);
-        mostrarTurno();
+        System.out.println(this);
     }
 
     public void mostrarTurno() {
         System.out.println("Turno: " + turno);
     }
+
+    public String toString() {
+        return "Aluno:\n" +
+                "Nome: " + getNome() + "\n" +
+                "Idade: " + getIdade() + "\n" +
+                "CPF: " + getCpf() + "\n" +
+                "Matrícula: " + matricula + "\n" +
+                "Curso: " + curso + "\n" +
+                "Turno: " + turno;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Aluno)) return false;
+        if (!super.equals(o)) return false;
+        Aluno aluno = (Aluno) o;
+        return Objects.equals(matricula, aluno.matricula) &&
+               Objects.equals(curso, aluno.curso) &&
+               Objects.equals(turno, aluno.turno);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), matricula, curso, turno);
+    }
 }
+ 

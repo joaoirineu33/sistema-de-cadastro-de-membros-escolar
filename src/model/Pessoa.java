@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public abstract class Pessoa {
     private String nome;
     private int idade;
@@ -22,4 +24,17 @@ public abstract class Pessoa {
 
     public abstract void exibirDados();
     public abstract void mostrarTurno();
+
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Pessoa pessoa = (Pessoa) obj;
+        return idade == pessoa.idade &&
+               Objects.equals(nome, pessoa.nome) &&
+               Objects.equals(cpf, pessoa.cpf);
+    }
+
+    public int hashCode() {
+        return Objects.hash(nome, idade, cpf);
+    }
 }
