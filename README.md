@@ -95,7 +95,7 @@ Encerrando o programa. Até mais!
 ```
 
 ---
-### 🔥 Funcionalidade Extra — Controle de Cilindro de Gás
+###  Funcionalidade Extra — Controle de Cilindro de Gás
 
 - O cilindro tem:
   - **capacidadeMaxima**
