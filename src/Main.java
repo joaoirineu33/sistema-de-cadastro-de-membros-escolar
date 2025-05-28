@@ -119,7 +119,7 @@ public class Main {
         System.out.println("\nEstado final do cilindro:");
         System.out.println("Capacidade Atual: " + cilindro.getCapacidadeAtual() + " unidades.");
 
-        // ============================================
+
 
         sc.close();
     }
