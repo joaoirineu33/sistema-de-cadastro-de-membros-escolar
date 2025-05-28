@@ -1,6 +1,8 @@
 import java.util.*;
 import model.Pessoa;
 import model.entity.*;
+import model.gas.CilindroGas;
+import model.gas.ConsumoExcedenteException;
 
 public class Main {
     public static void main(String[] args) {
@@ -90,6 +92,34 @@ public class Main {
                 System.out.println("---------------------------");
             }
         }
+
+        System.out.println("\n====== SIMULAÇÃO DO CILINDRO DE GÁS ======");
+
+        CilindroGas cilindro = new CilindroGas(50);
+        System.out.println("Cilindro criado: " + cilindro);
+
+        try {
+            cilindro.registrarConsumo(10);
+        } catch (ConsumoExcedenteException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            cilindro.registrarConsumo(5);
+        } catch (ConsumoExcedenteException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            cilindro.registrarConsumo(40);
+        } catch (ConsumoExcedenteException e) {
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("\nEstado final do cilindro:");
+        System.out.println("Capacidade Atual: " + cilindro.getCapacidadeAtual() + " unidades.");
+
+        // ============================================
 
         sc.close();
     }
