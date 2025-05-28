@@ -2,7 +2,11 @@
 
 ###  Descrição
 
-Este é um sistema simples em Java que permite o cadastro de diferentes tipos de membros da comunidade escolar: **Aluno**, **Professor** e **Técnico-Administrativo**.
+Este é um sistema simples em Java que permite:
+
+- O cadastro de diferentes tipos de membros da comunidade escolar: **Aluno**, **Professor** e **Técnico-Administrativo**.
+- E também o controle de consumo de um **Cilindro de Gás**, com tratamento de exceção personalizada para consumo excedente.
+
 
 Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
@@ -15,14 +19,16 @@ Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
 ### 🔹 Conceitos de POO aplicados
 
-| Conceito         | Como foi usado                                                                 |
-|------------------|---------------------------------------------------------------------------------|
-| **Abstração**       | A classe abstrata `Pessoa` define os atributos comuns e obriga `exibirDados()` |
-| **Encapsulamento**| Todos os atributos são `private`, acessados por meio de getters e setters        |
-| **Herança**         | `Aluno`, `Professor` e `TecnicoAdministrativo` estendem a classe `Pessoa`     |
-| **Polimorfismo**   | Métodos `exibirDados()` e `mostrarTurno()` são sobrescritos e chamados polimorficamente |
+| Conceito           | Como foi usado                                                                                                 |
+|--------------------|----------------------------------------------------------------------------------------------------------------|
+| **Abstração**      | A classe abstrata `Pessoa` e a modelagem do `CilindroGas`                                                    |
+| **Encapsulamento** | Todos os atributos são `private`, acessados por meio de getters e setters                                     |
+| **Herança**        | `Aluno`, `Professor` e `TecnicoAdministrativo` estendem a classe `Pessoa`                                    |
+| **Polimorfismo**   | Métodos `exibirDados()` e `mostrarTurno()` são sobrescritos nas classes derivadas                             |
+| **Exceção Customizada** | Implementação de `ConsumoExcedenteException` para controle de regras no consumo de gás                      |
 
 ---
+
 
 ###  Tipos de Membros Cadastrados
 
@@ -32,14 +38,17 @@ Utiliza os principais pilares da Programação Orientada a Objetos (POO):
 
 ---
 
-###  Funcionalidades
+### 🛠️ Funcionalidades
 
 - Cadastro de qualquer número de membros
 - Entrada de dados via console
 - Impressão de relatório individual para cada membro
 - Inclusão do atributo `Turno` para todos os tipos
-- O programa reinicia automaticamente após o relatório
-- Tratamento de exceções com `try/catch` para evitar erros de entrada
+- Controle de um **Cilindro de Gás** com:
+  - Registro de consumo
+  - Validação contra consumo excedente
+  - Lançamento da exceção `ConsumoExcedenteException` se tentar consumir além da capacidade atual
+- Tratamento de exceções com `try/catch`
 - Utilização de `ArrayList` para armazenar os cadastros dinamicamente
 
 ---
@@ -86,7 +95,52 @@ Encerrando o programa. Até mais!
 ```
 
 ---
+### 🔥 Funcionalidade Extra — Controle de Cilindro de Gás
 
+- O cilindro tem:
+  - **capacidadeMaxima**
+  - **capacidadeAtual**
+  - **qtdeUltimoConsumo**
+- Método principal:
+  - `registrarConsumo(int quantidade)` atualiza o consumo.
+- Se tentar consumir mais do que a **capacidadeAtual**, dispara a exceção personalizada **`ConsumoExcedenteException`**.
+---
+
+###  Exemplo de Saída
+```
+ CONTROLE DE CILINDRO DE GÁS   
+ Cilindro criado:
+→ capacidadeMaxima = 50
+→ capacidadeAtual = 50
+→ qtdeUltimoConsumo = 0
+
+--------------------------------------------------------
+
+Registro de consumo:
+✔ Consumo de 10 unidades
+→ capacidadeAtual = 40
+→ qtdeUltimoConsumo = 10
+
+Registro de consumo:
+✔ Consumo de 5 unidades
+→ capacidadeAtual = 35
+→ qtdeUltimoConsumo = 5
+
+Registro de consumo:
+✖ Tentativa de consumir 40 unidades
+→ ERRO: Consumo de 40 excede a capacidade atual de 35 unidades.
+
+--------------------------------------------------------
+
+🔸 Estado final do cilindro:
+→ capacidadeMaxima = 50
+→ capacidadeAtual = 35
+→ qtdeUltimoConsumo = 5
+
++------------------------------------------------------+
+```
+
+---
 ###  Como executar
 
 1. Clone o repositório:
